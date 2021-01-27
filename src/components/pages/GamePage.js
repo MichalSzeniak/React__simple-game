@@ -19,7 +19,7 @@ const GamePage = () => {
 
 
   return (
-        <div className="page">
+        <div className="gamePage">
           <h1 className="logo">
             C<span className="logo__color1">lik</span>
             <span className="logo__color2">ens</span>

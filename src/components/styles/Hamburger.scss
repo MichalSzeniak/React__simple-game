@@ -1,10 +1,22 @@
+@import './variables';
 .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 10px;
     margin: 16px;
     display: inline-block;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    z-index: 3;
+    transform: translateX(0);
+    transition: .3s transform ease-in-out;
+
+    // @media (min-width: $tablet) {
+    //     display: none;
+    // }
+
     &:focus {
         outline: none;
     }
@@ -21,7 +33,6 @@
         height: 4px;
         position: absolute;
         background-color: #fff;
-        z-index: 3;
     }
 
     &__inner {
@@ -29,7 +40,6 @@
         left: 0;
         top: 50%;
         transition: .3s background-color ease-in-out;
-        transition: .3s transform ease-in-out;
 
         &:after{
             content: '';
@@ -50,7 +60,6 @@
 }
 
 .hamburger_active .hamburger__inner{
-    transform: translateX(275px);
     background-color: transparent;
 }
 
@@ -60,4 +69,8 @@
 
 .hamburger_active .hamburger__inner:before{
     transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger_active {
+    transform: translateX(210px);
 }
