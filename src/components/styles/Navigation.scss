@@ -1,0 +1,35 @@
+.navigation {
+    position: relative;
+}
+
+.nav {
+    width: 375px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: -375px;
+    background-color: rgb(221, 77, 77);
+    transition: .3s transform ease-in-out;
+    z-index: 2;
+
+    &__list {
+        margin-top: 48px;
+        list-style: none;
+        padding: 0;
+
+        &--item {
+            padding: 16px;
+            font-size: 24px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.nav__active {
+    transform: translateX(374px);
+}
