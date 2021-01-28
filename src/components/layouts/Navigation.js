@@ -7,6 +7,7 @@ const list = [
   { name: 'Start', path: '/', ecaxt: true },
   { name: 'Achievements', path: '/Achievements' },
   { name: 'Settings', path: '/Settings' },
+  { name: 'Upgrades', path: '/Upgrades' },
 ];
 
 const Navigation = () => {
@@ -21,8 +22,8 @@ const Navigation = () => {
   }
 
   const menu = list.map((item) => (
-    <li className="nav__list--item">
-      <NavLink className="nav__link" to={item.path} onClick={handleLink} exact={item.ecaxt ? item.exact : false}>
+    <li key={item.name} className="nav__list--item">
+      <NavLink  className="nav__link" to={item.path} onClick={handleLink} exact={item.ecaxt ? item.exact : false}>
         {item.name}
       </NavLink>
     </li>

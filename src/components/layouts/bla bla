@@ -12,36 +12,16 @@ const Page = () => {
     return localData ? JSON.parse(localData) : 0;
   });
 
-  useEffect(() => {
-    localStorage.setItem('score', score);
-  }, [score]);
-
   const handleButton = () => {
     setScore(score + 1);
   };
 
-
-  const [bonus, setBonus] = useState(() => {
-    const localDataBonus = localStorage.getItem('bonus');
-    return localDataBonus ? JSON.parse(localDataBonus) : 1;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('bonus', bonus);
-  }, [bonus]);
-
-
-
-
-
-
+  const [bonus, setBonus] = useState(1);
   const [isRunning, setIsRunning] = useState(false);
 
   const handleIsRunning = () => {
     setIsRunning(!isRunning);
   };
-
-
 
   useInterval(
     () => {
@@ -56,9 +36,9 @@ const Page = () => {
       setBonusActive(!bonusActive)
     } 
 
-    if(score >= 500 && bonusActive === true) {
-      setBonus(bonus + 1);
-      setScore(score - 500);
+    if(score >= 10000 && bonusActive === true) {
+      setBonus(bonus = bonus + 1);
+      setScore(score - 10000);
     }
 
   return (
@@ -78,7 +58,6 @@ const Page = () => {
               isRunning={isRunning}
               bonus={bonus}
               bonusActive = {handleBonusActive}
-              score={score}
             />
           )}
         />

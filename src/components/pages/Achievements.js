@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react';
+import useInterval from '../useInterval';
 
 const Achievements = () => {
-    return (
-        <div>
-            siemka
-        </div>
-    )
-}
 
-export default Achievements
+
+
+  return (
+    <>
+    </>
+  );
+};
+
+export default Achievements;
