@@ -11,6 +11,10 @@
     transition: .3s transform ease-in-out;
     z-index: 2;
 
+    &__active {
+        transform: translateX(0px);
+    }
+
     // @media (min-width: $tablet) {
     //     transform: translateX(0);
     //     top: 0;
@@ -48,10 +52,7 @@
 }
 
 .lastItem {
-    margin-top: 64px;
+    margin-top: 120px;
     background-color: rgb(165, 159, 82);
 }
 
-.nav__active {
-    transform: translateX(0px);
-}

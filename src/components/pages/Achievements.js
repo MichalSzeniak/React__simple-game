@@ -54,6 +54,7 @@ const Achievements = ({ achieveScore, setBgcolor }) => {
   return (
     <>
       <div className="achievements">
+        <h2>Achievements</h2>
         <div className="achievements__grid">{Achieves}</div>
       </div>
     </>

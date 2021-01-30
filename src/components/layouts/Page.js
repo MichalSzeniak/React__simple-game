@@ -114,7 +114,7 @@ const Page = () => {
             <Achievements achieveScore={achieveScore} setBgcolor={setBgcolor} />
           )}
         />
-        <Route path="/Settings" render={() => <Settings />} />
+        <Route path="/Settings" render={() => <Settings setScore={setScore} setBonus={setBonus} setAchieveScore={setAchieveScore} setclickBonus={setclickBonus}/>} />
       </div>
     </>
   );
