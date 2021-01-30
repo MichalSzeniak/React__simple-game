@@ -7,7 +7,7 @@ const list = [
   { name: 'Start', path: '/', ecaxt: true },
   { name: 'Upgrades', path: '/Upgrades' },
   { name: 'Achievements', path: '/Achievements' },
-  { name: 'Settings', path: '/Settings', class: "lastItem" },
+  { name: 'Reset', path: '/Reset', class: "lastItem" },
 ];
 
 const Navigation = () => {

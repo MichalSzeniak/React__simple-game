@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/Settings.scss';
+import '../styles/Reset.scss';
 
-const Settings = ({ setScore, setBonus, setAchieveScore, setclickBonus }) => {
+const Reset = ({ setScore, setBonus, setAchieveScore, setclickBonus }) => {
   const [active, setActive] = useState(false);
 
   const handleCLick = () => {
@@ -44,4 +44,4 @@ const Settings = ({ setScore, setBonus, setAchieveScore, setclickBonus }) => {
   );
 };
 
-export default Settings;
+export default Reset;

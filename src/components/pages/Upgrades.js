@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/upgrades.scss';
 
 const Upgrades = ({
-  upgrade,
+  setIsRunning,
   isRunning,
   bonus,
   bonusActive,
@@ -11,6 +11,11 @@ const Upgrades = ({
   handleClickBonus,
   clickBonus,
 }) => {
+
+  const handleTurnOnOff = () => {
+    setIsRunning(!isRunning)
+  }
+
   return (
     <>
       <div className="upgrades">
@@ -31,17 +36,17 @@ const Upgrades = ({
                 className={
                   isRunning ? 'upgrade upgrade__on' : 'upgrade upgrade__off'
                 }
-                onClick={upgrade}
+                onClick={handleTurnOnOff}
               ></button>
             </div>
-        <div className="upgrade">
-          <div className="upgrade__box">
+        <div className="upgrade__section">
+          <div className="upgrade__section--box">
             <p>Click upgrade</p>
             <button className={'upgrade__button'} onClick={handleClickBonus}>
               cost: 200
             </button>
           </div>
-          <div className="upgrade__box">
+          <div className="upgrade__section--box">
             <p>Auto-Click upgrade</p>
             <button className={'upgrade__button'} onClick={bonusActive}>
               cost: 500

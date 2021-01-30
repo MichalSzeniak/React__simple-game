@@ -5,45 +5,73 @@ import '../styles/Achievements.scss';
 const listOfAchievements = [
   {
     id: 1,
-    name: 'kox',
-    description: 'tylko koksy wbijaja takie osiągnięcie',
-    scoree: 100,
+    name: 'first point',
+    description: '🙂',
+    scoree: 1,
     color: "#D9D9D9",
   },
   {
     id: 2,
-    name: 'kilo-kox',
-    description: 'tylko koksy wbijaja takie osiągnięcie',
-    scoree: 1000,
+    name: '100 points',
+    description: 'first 100 points',
+    scoree: 100,
     color: "#219653",
   },
   {
     id: 3,
-    name: 'mega-kox',
-    description: 'tylko koksy wbijaja takie osiągnięcie',
-    scoree: 10000,
+    name: '500 points',
+    description: '😁',
+    scoree: 1000,
     color: "#F2994A",
   },
   {
     id: 4,
-    name: 'tera-kox',
-    description: 'tylko koksy wbijaja takie osiągnięcie',
-    scoree: 100000,
+    name: '1000 points',
+    description: '🐗',
+    scoree: 5000,
     color: "#BB6BD9",
   },
   {
     id: 5,
-    name: 'kox-kox',
-    description: 'tylko koksy wbijaja takie osiągnięcie',
-    scoree: 100000,
+    name: '5000 points',
+    description: '🐱‍🏍',
+    scoree: 10000,
     color: "#EB5757",
   },
   {
     id: 6,
-    name: 'turbo-kox',
-    description: 'tylko koksy wbijaja takie osiągnięcie',
-    scoree: 1000000,
+    name: '10000 points',
+    description: 'Kox 😎',
+    scoree: 20000,
     color: "#F2C94C",
+  },
+  {
+    id: 7,
+    name: '10000 points',
+    description: 'Kilo kox 😵',
+    scoree: 100000,
+    color: "#E6F5B0",
+  },
+  {
+    id: 8,
+    name: '10000 points',
+    description: 'Mega kox 🧟‍♂️',
+    scoree: 200000,
+    color: "#BFB4FA",
+  },
+  {
+    id: 9,
+    name: '10000 points',
+    description: 'Giga kox 🤠',
+    scoree: 1000000,
+    color: "#A38D5B",
+  },
+  {
+    id: 10,
+    name: '10000 points',
+    description: 'Tera kox 🚀',
+    scoree: 10000000,
+    color: "#C777B8",
   },
 ];
 
@@ -54,7 +82,7 @@ const Achievements = ({ achieveScore, setBgcolor }) => {
   return (
     <>
       <div className="achievements">
-        <h2>Achievements</h2>
+        <h2 className="achievements__header">Achievements</h2>
         <div className="achievements__grid">{Achieves}</div>
       </div>
     </>

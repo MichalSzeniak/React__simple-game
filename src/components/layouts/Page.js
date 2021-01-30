@@ -5,8 +5,9 @@ import Achievements from './../pages/Achievements.js';
 import Upgrades from './../pages/Upgrades';
 import '../styles/page.scss';
 import useInterval from '../useInterval';
-import Settings from '../pages/Settings';
+import Reset from '../pages/Reset';
 
+// Wynik
 const Page = () => {
   const [score, setScore] = useState(() => {
     const localData = localStorage.getItem('score');
@@ -17,6 +18,7 @@ const Page = () => {
     localStorage.setItem('score', score);
   }, [score]);
 
+  // Bonus podczas klikania
   const [clickBonus, setclickBonus] = useState(() => {
     const localDataClickBonus = localStorage.getItem('clickBonus');
     return localDataClickBonus ? JSON.parse(localDataClickBonus) : 1;
@@ -26,6 +28,7 @@ const Page = () => {
     localStorage.setItem('clickBonus', clickBonus);
   }, [clickBonus]);
 
+  // Wynik do achievementow
   const [achieveScore, setAchieveScore] = useState(() => {
     const localAchieveScore = localStorage.getItem('achieveScore');
     return localAchieveScore ? JSON.parse(localAchieveScore) : 0;
@@ -35,6 +38,7 @@ const Page = () => {
     localStorage.setItem('achieveScore', achieveScore);
   }, [score]);
 
+  // ulepszenie pojedynczego klikniecia
   const [clickBonusActive, setClickBonusActive] = useState(false);
 
   const handleClickBonus = () => {
@@ -50,6 +54,7 @@ const Page = () => {
     setAchieveScore(achieveScore + clickBonus);
   };
 
+  // AutoClick bonus
   const [bonus, setBonus] = useState(() => {
     const localDataBonus = localStorage.getItem('bonus');
     return localDataBonus ? JSON.parse(localDataBonus) : 0;
@@ -59,11 +64,8 @@ const Page = () => {
     localStorage.setItem('bonus', bonus);
   }, [bonus]);
 
+  // Włączenie bonusu, gdy aktywny jest AutoClick. Interwał ustawiony na 1s.
   const [isRunning, setIsRunning] = useState(false);
-
-  const handleIsRunning = () => {
-    setIsRunning(!isRunning);
-  };
 
   useInterval(
     () => {
@@ -73,6 +75,7 @@ const Page = () => {
     isRunning ? 1000 : null,
   );
 
+  // ulepszenie autoClicka
   const [bonusActive, setBonusActive] = useState(false);
 
   const handleBonusActive = () => {
@@ -98,7 +101,7 @@ const Page = () => {
           path="/Upgrades"
           render={() => (
             <Upgrades
-              upgrade={handleIsRunning}
+            setIsRunning={setIsRunning}
               isRunning={isRunning}
               bonus={bonus}
               bonusActive={handleBonusActive}
@@ -114,7 +117,7 @@ const Page = () => {
             <Achievements achieveScore={achieveScore} setBgcolor={setBgcolor} />
           )}
         />
-        <Route path="/Settings" render={() => <Settings setScore={setScore} setBonus={setBonus} setAchieveScore={setAchieveScore} setclickBonus={setclickBonus}/>} />
+        <Route path="/Reset" render={() => <Reset setScore={setScore} setBonus={setBonus} setAchieveScore={setAchieveScore} setclickBonus={setclickBonus}/>} />
       </div>
     </>
   );
