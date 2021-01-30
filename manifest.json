@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Clikens",
+  "name": "Clikens",
+  "scope": "https://michalszeniak.github.io/React__simple-game/",
   "icons": [
     {
       "src": "favicon.ico",
