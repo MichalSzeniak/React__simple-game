@@ -5,9 +5,9 @@ import '../styles/Navigation.scss';
 
 const list = [
   { name: 'Start', path: '/', ecaxt: true },
-  { name: 'Achievements', path: '/Achievements' },
-  { name: 'Settings', path: '/Settings' },
   { name: 'Upgrades', path: '/Upgrades' },
+  { name: 'Achievements', path: '/Achievements' },
+  { name: 'Settings', path: '/Settings', class: "lastItem" },
 ];
 
 const Navigation = () => {
@@ -23,7 +23,7 @@ const Navigation = () => {
 
   const menu = list.map((item) => (
     <li key={item.name} className="nav__list--item">
-      <NavLink  className="nav__link" to={item.path} onClick={handleLink} exact={item.ecaxt ? item.exact : false}>
+      <NavLink  className={item.class ? "nav__link lastItem" : "nav__link"} to={item.path} onClick={handleLink}  exact={item.ecaxt ? item.exact : false}>
         {item.name}
       </NavLink>
     </li>
