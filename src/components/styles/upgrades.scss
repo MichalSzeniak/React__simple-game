@@ -86,6 +86,10 @@
         font-weight: 600;
         margin: 0;
     }
+
+    @media(max-width: $tablet) {
+        padding: 16px 0;
+    }
 }
 
 .upgrade__section {
@@ -93,13 +97,17 @@
     text-align: center;
     display: flex;
     
-    &__box {
-        padding: 32px;
+    &--box {
+        padding: 16px;
     }
 
     @media (max-width: $tablet) {
         display: flex;
         flex-direction: column;
+
+        &--box {
+            padding: 0;
+        }
     }
 }
 

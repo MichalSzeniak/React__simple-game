@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import GamePage from './../pages/GamePage';
 import Achievements from './../pages/Achievements.js';
 import Upgrades from './../pages/Upgrades';
 import '../styles/page.scss';
 import useInterval from '../useInterval';
 import Reset from '../pages/Reset';
+import ErrorPage from '../pages/ErrorPage';
 
 // Wynik
 const Page = () => {
@@ -39,11 +40,9 @@ const Page = () => {
   }, [score]);
 
   // ulepszenie pojedynczego klikniecia
-  const [clickBonusActive, setClickBonusActive] = useState(false);
 
   const handleClickBonus = () => {
-    setClickBonusActive(!clickBonusActive);
-    if (score >= 200 && clickBonusActive) {
+    if (score >= 200 ) {
       setclickBonus(clickBonus + 1);
       setScore(score - 200);
     }
@@ -65,7 +64,7 @@ const Page = () => {
   }, [bonus]);
 
   // Włączenie bonusu, gdy aktywny jest AutoClick. Interwał ustawiony na 1s.
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(true);
 
   useInterval(
     () => {
@@ -76,12 +75,10 @@ const Page = () => {
   );
 
   // ulepszenie autoClicka
-  const [bonusActive, setBonusActive] = useState(false);
 
   const handleBonusActive = () => {
-    setBonusActive(!bonusActive);
 
-    if (score >= 500 && bonusActive) {
+    if (score >= 500) {
       setBonus(bonus + 1);
       setScore(score - 500);
     }
@@ -92,6 +89,7 @@ const Page = () => {
   return (
     <>
       <div className="page" style={{ backgroundColor: bgColor }}>
+        <Switch>
         <Route
           path="/"
           exact
@@ -118,6 +116,8 @@ const Page = () => {
           )}
         />
         <Route path="/Reset" render={() => <Reset setScore={setScore} setBonus={setBonus} setAchieveScore={setAchieveScore} setclickBonus={setclickBonus}/>} />
+        <Route component={ErrorPage} />
+        </Switch>
       </div>
     </>
   );

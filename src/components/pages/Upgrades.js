@@ -10,6 +10,7 @@ const Upgrades = ({
   score,
   handleClickBonus,
   clickBonus,
+  handleBonusActiveFull,
 }) => {
 
   const handleTurnOnOff = () => {
@@ -45,12 +46,18 @@ const Upgrades = ({
             <button className={'upgrade__button'} onClick={handleClickBonus}>
               cost: 200
             </button>
+            <p>
+              x{Math.round(score/200)}
+            </p>
           </div>
           <div className="upgrade__section--box">
             <p>Auto-Click upgrade</p>
             <button className={'upgrade__button'} onClick={bonusActive}>
               cost: 500
             </button>
+            <p>
+              x{Math.round(score/500)}
+              </p>
           </div>
         </div>
       </div>
