@@ -1,6 +1,6 @@
 # Clicker Game
 
-![cover](https://michalszeniak.github.io/React__simple-game/gameScreenShot.png)
+![cover](https://github.com/MichalSzeniak/React__simple-game/blob/gh-pages/gameScreenShot.png)
 
 
 
